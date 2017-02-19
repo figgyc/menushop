@@ -1,0 +1,8 @@
+# MenuShop
+# Item names are the ones in CAPITALS, get them with /itemdb in essentials
+# Prices can have up to 2 decimals
+# You can add as many items as you want, the UI will add page buttons for you
+# The format is "ITEM: price"
+# Items will appear in the order you place them in this list
+items:
+  GRASS: 1

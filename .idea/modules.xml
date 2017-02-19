@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/menushop.iml" filepath="$PROJECT_DIR$/.idea/modules/menushop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/menushop_main.iml" filepath="$PROJECT_DIR$/.idea/modules/menushop_main.iml" group="menushop" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/menushop_test.iml" filepath="$PROJECT_DIR$/.idea/modules/menushop_test.iml" group="menushop" />
+    </modules>
+  </component>
+</project>

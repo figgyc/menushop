@@ -1,0 +1,16 @@
+name: MenuShop
+version: 1.0
+author: figgyc
+main: uk.figgyc.menushop.MenuShopPlugin
+depend: [Vault]
+load: POSTWORLD
+description: Provides a graphical shop.
+commands:
+  shop:
+    description: Open the shop
+    permission: menushop.shop
+    usage: /shop
+permissions:
+  menushop.shop:
+    description: Allow usage of the /shop command.
+    default: true

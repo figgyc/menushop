@@ -3,8 +3,6 @@ package uk.figgyc.menushop;
 import com.google.common.collect.Lists;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.configuration.InvalidConfigurationException;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -14,9 +12,6 @@ import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.item.Items;
 import org.bukkit.plugin.RegisteredServiceProvider;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.Reader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -28,7 +23,9 @@ public class MenuShopPlugin extends JavaPlugin {
     List<List<ItemStack>> itemStackLists;
     Map<String, Object> items;
     Map<Player, Number> page;
+    List<ItemStack> itemStackList;
     List<Inventory> pages;
+    List<Inventory> searches;
     Economy econ = null;
     Logger log = Logger.getLogger("Minecraft");
 
@@ -54,8 +51,9 @@ public class MenuShopPlugin extends JavaPlugin {
         reloadConfig();
         page = new HashMap<>();
         pages = new ArrayList<>();
+        searches = new ArrayList<>();
         itemStackLists = new ArrayList<>();
-        List<ItemStack> itemStackList = new ArrayList<>();
+        itemStackList = new ArrayList<>();
         items = getConfig().getConfigurationSection("items").getValues(false);
         // create list of items
         for (Map.Entry<String, Object> entry : items.entrySet()) {

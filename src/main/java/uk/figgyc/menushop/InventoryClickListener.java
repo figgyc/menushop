@@ -27,7 +27,7 @@ public class InventoryClickListener implements Listener{
 
     @EventHandler
     private void onInventoryClick(InventoryClickEvent e) {
-        if (plugin.pages.contains(e.getInventory()) && e.getSlotType() == InventoryType.SlotType.CONTAINER) {
+        if ((plugin.pages.contains(e.getInventory()) || plugin.searches.contains(e.getInventory())) && e.getSlotType() == InventoryType.SlotType.CONTAINER) {
             if (e.getSlot() == 45) {
                 plugin.getServer().getScheduler().runTask(plugin, () -> {
                     // What you want to schedule goes here
@@ -37,6 +37,12 @@ public class InventoryClickListener implements Listener{
                     plugin.page.put((Player) e.getWhoClicked(), page);
                     e.setResult(Event.Result.DENY); // make sure the item doesn't disappear or remain in cursor while executing command
                     e.getWhoClicked().openInventory(plugin.pages.get(page));
+                });
+            } else if (e.getSlot() == 49) {
+                plugin.getServer().getScheduler().runTask(plugin, () -> {
+                    // What you want to schedule goes here
+                    e.setResult(Event.Result.DENY); // make sure the item doesn't disappear or remain in cursor while executing command
+                    e.getView().close();
                 });
             } else if (e.getSlot() == 53) {
                 plugin.getServer().getScheduler().runTask(plugin, () -> {
